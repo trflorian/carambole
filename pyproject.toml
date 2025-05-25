@@ -3,8 +3,21 @@ name = "carambole"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "numpy>=2.2.1",
     "opencv-python>=4.10.0.84",
+    "pillow>=11.2.1",
+    "pytorch-lightning>=2.5.1.post0",
+    "torch>=2.7.0",
+    "tqdm>=4.67.1",
 ]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu118" }]
+torchvision = [{ index = "pytorch-cu118" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
